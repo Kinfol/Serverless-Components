@@ -10,6 +10,6 @@ const lambdaHandler = async function lambdaHandler(event, context, callback) {
 }
 
 
-export default {
+module.exports = {
     lambdaHandler,
 };
