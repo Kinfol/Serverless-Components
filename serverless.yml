@@ -1,0 +1,19 @@
+---
+service: serverless-http-endpoint
+
+package:
+  individualy: true
+  # exclude:
+  #   - ./*
+
+provider:
+  name: aws
+  region: eu-west-2
+  stage: ${opt:stage}
+  runtime: nodejs8.10
+  stackTags:
+    PPROJECT: ${self:service}
+    STAGE: ${self:provider.stage}
+
+functions:
+  currentTime: ${file(functions/endpoint-function.yml)}

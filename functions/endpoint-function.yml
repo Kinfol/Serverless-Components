@@ -1,0 +1,10 @@
+---
+name: ${self:provider.stage}-currentTime
+prefix: http-endpoint
+description: "aws node http endpoint"
+handler: functions/endpoint-handler.endpoint
+events:
+- http:
+    path: ping
+    method: get
+
